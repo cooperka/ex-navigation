@@ -2,12 +2,14 @@
   "name": "@exponent/ex-navigation",
   "version": "2.7.0",
   "description": "Route-centric navigation library for React Native.",
-  "main": "./src/ExNavigation.js",
+  "main": "./build/ExNavigation.js",
   "files": [
     "src",
+    "build",
     "README.md"
   ],
   "scripts": {
+    "build": "babel src --out-dir build",
     "lint": "eslint ./src ./example",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -46,7 +48,9 @@
     "warning": "^2.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.16.0",
     "babel-eslint": "^6.1.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^3.0.0",
     "eslint-config-exponent": "^2.0.2",
     "eslint-plugin-babel": "^3.3.0",
