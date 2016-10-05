@@ -31,7 +31,7 @@ export { default as NavigationActions } from './ExNavigationActions';
 export { default as NavigationActionTypes } from './ExNavigationActionTypes';
 export { default as NavigationReducer } from './ExNavigationReducer';
 
-export * as NavigationStyles from './ExNavigationStyles';
+export * from './ExNavigationStyles';
 
 export { createRouter } from './ExNavigationRouter';
 export { withNavigation, createFocusAwareComponent } from './ExNavigationComponents';
