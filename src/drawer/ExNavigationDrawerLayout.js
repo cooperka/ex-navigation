@@ -161,7 +161,10 @@ export default class ExNavigationDrawerLayout extends React.Component {
   //
   _handlePress = (item: any) => {
     item.onPress();
-    this._component.closeDrawer();
+
+    if (!item.handlesDrawerToggle) {
+      this._component.closeDrawer();
+    }
   };
 
   _handleLongPress = (item: any) => {
@@ -170,7 +173,10 @@ export default class ExNavigationDrawerLayout extends React.Component {
     }
 
     item.onLongPress();
-    this._component.closeDrawer();
+
+    if (!item.handlesDrawerToggle) {
+      this._component.closeDrawer();
+    }
   };
 }
 
