@@ -187,6 +187,7 @@ const styles = StyleSheet.create({
   },
   navigationViewScrollableContentContainer: {
     paddingTop: 8,
+    paddingBottom: 8,
   },
   buttonContainer: {
     flex: 1,
