@@ -216,6 +216,8 @@ export const createFocusableComponent = (WrappedComponent: ReactClass<any>) => {
     constructor(props, context) {
       super(props, context);
 
+      this._isMounted = true;
+
       let _prevNavState = null;
       this._unsubcribeFromStore = this.props.navigation.store.subscribe(() => {
         try {
@@ -232,24 +234,26 @@ export const createFocusableComponent = (WrappedComponent: ReactClass<any>) => {
           const componentIsNavigator = WrappedComponent.navigation && WrappedComponent.navigation.__isNavigator;
           if (componentIsNavigator) {
             isFocused = focusedNavigatorUID === this.props.navigatorUID;
-            if (isFocused && isFocused !== this.state.isFocused) {
-              // console.log('focused navigator: ', this.props.id, this.props.navigatorUID);
-            } else if (!isFocused && isFocused !== this.state.isFocused) {
-              // console.log('unfocused navigator: ', this.props.id, this.props.navigatorUID);
-            }
+            // if (isFocused && isFocused !== this.state.isFocused) {
+            //   // console.log('focused navigator: ', this.props.id, this.props.navigatorUID);
+            // } else if (!isFocused && isFocused !== this.state.isFocused) {
+            //   // console.log('unfocused navigator: ', this.props.id, this.props.navigatorUID);
+            // }
           } else if (this.props.route) {
             isFocused = this.props.route === focusedRoute;
-            if (isFocused && isFocused !== this.state.isFocused) {
-              // console.log('focused screen: ', this.props.route);
-            } else if (!isFocused && isFocused !== this.state.isFocused) {
-              // console.log('unfocused screen: ', this.props.route);
-            }
+            // if (isFocused && isFocused !== this.state.isFocused) {
+            //   // console.log('focused screen: ', this.props.route);
+            // } else if (!isFocused && isFocused !== this.state.isFocused) {
+            //   // console.log('unfocused screen: ', this.props.route);
+            // }
           }
 
           if (isFocused !== this.state.isFocused) {
-            this.setState({
-              isFocused,
-            });
+            if (this._isMounted) {
+              this.setState({
+                isFocused,
+              });
+            }
           }
 
           _prevNavState = navState;
@@ -264,6 +268,7 @@ export const createFocusableComponent = (WrappedComponent: ReactClass<any>) => {
     }
 
     componentWillUnmount() {
+      this._isMounted = false;
       this._unsubcribeFromStore && this._unsubcribeFromStore();
     }
 
