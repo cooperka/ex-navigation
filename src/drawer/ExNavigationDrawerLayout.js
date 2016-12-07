@@ -164,7 +164,6 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
   },
   buttonContainer: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
