@@ -1,4 +1,4 @@
-Object.defineProperty(exports,"__esModule",{value:true});var _ExNavigationProvider=require('./ExNavigationProvider');Object.defineProperty(exports,'NavigationProvider',{enumerable:true,get:function get(){return _interopRequireDefault(_ExNavigationProvider).
+Object.defineProperty(exports,"__esModule",{value:true});exports.AndroidBackButtonBehavior=exports.getBackButtonManager=exports.createFocusAwareComponent=exports.withNavigation=exports.createRouter=exports.NavigationStyles=exports.NavigationReducer=exports.NavigationActionTypes=exports.NavigationActions=exports.createNavigationEnabledStore=exports.SharedElement=exports.SharedElementGroup=exports.SharedElementOverlay=exports.NavigationBar=exports.DrawerNavigationItem=exports.DrawerNavigation=exports.SlidingTabNavigationItem=exports.SlidingTabNavigation=exports.TabBadge=exports.TabBar=exports.TabNavigationItem=exports.TabNavigation=exports.StackNavigationItem=exports.StackNavigation=exports.NavigationContext=exports.NavigationProvider=undefined;var _ExNavigationProvider=require('./ExNavigationProvider');Object.defineProperty(exports,'NavigationProvider',{enumerable:true,get:function get(){return _interopRequireDefault(_ExNavigationProvider).
 
 
 
@@ -29,13 +29,14 @@ createNavigationEnabledStore;}});var _ExNavigationActions=require('./ExNavigatio
 
 default;}});var _ExNavigationActionTypes=require('./ExNavigationActionTypes');Object.defineProperty(exports,'NavigationActionTypes',{enumerable:true,get:function get(){return _interopRequireDefault(_ExNavigationActionTypes).
 default;}});var _ExNavigationReducer=require('./ExNavigationReducer');Object.defineProperty(exports,'NavigationReducer',{enumerable:true,get:function get(){return _interopRequireDefault(_ExNavigationReducer).
-default;}});var _ExNavigationStyles=require('./ExNavigationStyles');
+default;}});var _ExNavigationRouter=require('./ExNavigationRouter');Object.defineProperty(exports,'createRouter',{enumerable:true,get:function get(){return _ExNavigationRouter.
 
-Object.keys(_ExNavigationStyles).forEach(function(key){if(key==="default"||key==="__esModule")return;Object.defineProperty(exports,key,{enumerable:true,get:function get(){return _ExNavigationStyles[key];}});});var _ExNavigationRouter=require('./ExNavigationRouter');Object.defineProperty(exports,'createRouter',{enumerable:true,get:function get(){return _ExNavigationRouter.
+
+
 
 createRouter;}});var _ExNavigationComponents=require('./ExNavigationComponents');Object.defineProperty(exports,'withNavigation',{enumerable:true,get:function get(){return _ExNavigationComponents.
 withNavigation;}});Object.defineProperty(exports,'createFocusAwareComponent',{enumerable:true,get:function get(){return _ExNavigationComponents.createFocusAwareComponent;}});var _ExNavigationBackButtonManager=require('./ExNavigationBackButtonManager');Object.defineProperty(exports,'getBackButtonManager',{enumerable:true,get:function get(){return _ExNavigationBackButtonManager.
 
 getBackButtonManager;}});var _ExNavigationAndroidBackButtonBehavior=require('./ExNavigationAndroidBackButtonBehavior');Object.defineProperty(exports,'AndroidBackButtonBehavior',{enumerable:true,get:function get(){return _interopRequireDefault(_ExNavigationAndroidBackButtonBehavior).
 
-default;}});function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}
+default;}});var _ExNavigationStyles=require('./ExNavigationStyles');var NavigationStyles=_interopRequireWildcard(_ExNavigationStyles);function _interopRequireWildcard(obj){if(obj&&obj.__esModule){return obj;}else{var newObj={};if(obj!=null){for(var key in obj){if(Object.prototype.hasOwnProperty.call(obj,key))newObj[key]=obj[key];}}newObj.default=obj;return newObj;}}function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}exports.NavigationStyles=NavigationStyles;
